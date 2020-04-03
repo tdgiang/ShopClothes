@@ -2,20 +2,21 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import MyTabs from './myTab';
-
+import Header from './header';
  export default class Shop extends Component {
+
+    openMenu(){
+        this.props.navigation.openDrawer()
+    }
       
      render() {
          return (
             <NavigationContainer  independent={true} >
-            <MyTabs />
+                <Header openMenu={this.openMenu.bind(this)} />
+                <MyTabs />
           </NavigationContainer>
              
          );
      }
  }
 
-
-//  <TouchableOpacity onPress={()=>this.props.navigation.openDrawer()}>
-//                     <Text>Open</Text>
-//                 </TouchableOpacity>
