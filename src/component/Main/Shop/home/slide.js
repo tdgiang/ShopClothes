@@ -15,7 +15,7 @@ import styles from '../../../../styles/styles';
         dataListCategory.map(e=>{
             listItem.push(
                 
-                    <View style={boxBanner}>
+                    <View key={e.id} style={boxBanner}>
                     <TouchableOpacity>
                         <ImageBackground style={[imgStyleBanner,{justifyContent:'center',alignItems:'center'}]} source={e.img}>
                             <Text style={txtNamePro} >{e.name}</Text>
@@ -33,11 +33,10 @@ import styles from '../../../../styles/styles';
          return ( 
              <View  style={styles.containerSile} >
                 <Swiper
-                    
                     loop
                     timeout={2.5}
                     controlsProps={{
-                    dotActiveStyle: { backgroundColor: 'red' },
+                    dotActiveStyle: { backgroundColor: '#00b38f' },
                     
                     }}
                 >

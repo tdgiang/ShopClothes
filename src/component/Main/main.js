@@ -84,7 +84,7 @@ export default function App() {
                 <Drawer.Screen name="Shop" component={ShopScreen} />
                 <Drawer.Screen name="OrderHistory" component={orderHistoryScreen} />
                 <Drawer.Screen name="ChangeInfo" component={changeInfoScreen} />
-                <Drawer.Screen name="Authentication" component={authenticationScreen} />
+                <Drawer.Screen name="Sign out" component={authenticationScreen} />
             
             </Drawer.Navigator>
         </NavigationContainer>
