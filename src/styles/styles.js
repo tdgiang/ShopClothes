@@ -1,6 +1,7 @@
 import { StyleSheet,Dimensions } from 'react-native';
 const bgColor='#00997a';
-const grayColor="#a6a6a6"
+const textGrayColor="#a6a6a6";
+const bgGray='#f2f2f2';
 const {width,height}=Dimensions.get('window');
 const styles=StyleSheet.create({
     contianerDrawer:{
@@ -56,7 +57,8 @@ const styles=StyleSheet.create({
         fontSize:20
     },
     txtRed:{
-        color:'#cc0066'
+        color:'#cc0066',
+        fontSize:16
     },  
     txtBigWhite:{
         color:'white',
@@ -65,14 +67,14 @@ const styles=StyleSheet.create({
     txtTitle:{
         fontSize:22,
         textTransform:'uppercase',
-        color:'#a6a6a6',
+        color:textGrayColor,
         marginHorizontal:10,
         marginTop:5
     },
     txtNamePro:{
         fontSize:18,
         textTransform:'uppercase',
-        color:'#a6a6a6'
+        color:textGrayColor
     },
     txtPrice:{
         fontSize:18,
@@ -91,7 +93,7 @@ const styles=StyleSheet.create({
         textAlign:'center'
     },
     txtLeftOrder:{
-        color:'#a6a6a6',
+        color:textGrayColor,
         fontSize:18,
         fontWeight:'bold'
     },
@@ -104,7 +106,11 @@ const styles=StyleSheet.create({
         color:'black',
         fontWeight:'bold'
     },
-    
+    txtCout:{
+        fontSize:26,
+      
+        
+    },
 
     containerHeader:{
         height:90,
@@ -135,6 +141,10 @@ const styles=StyleSheet.create({
         fontSize:18,
         borderRadius:20,
         marginVertical:10
+    },
+    txtMenu:{
+        color:bgColor,
+        fontSize:22
     },
    
     containerCollection:{
@@ -252,21 +262,90 @@ const styles=StyleSheet.create({
         borderColor:'red',
         borderWidth:1
     },
+    
     itemListProduct:{
         padding:10,
-        borderBottomColor:'#f2f2f2',
+        borderBottomColor:bgGray,
         borderBottomWidth:1,
-        marginTop:10
+        marginTop:10,
+        flexDirection:'row',
+       
     },
     boxImgList:{
         width:110
     },
     rightListProduct:{
+         
         flexDirection:'column',
         justifyContent:'space-around',
+        backgroundColor:'red'
         
-    }
+    },
+    btnTotal:{
+        backgroundColor:bgColor,
+        height:50,
+        justifyContent:'center',
+        alignItems:'center',
+        marginHorizontal:10,
+        marginVertical:5
+    },
+    btnMenu:{
+        backgroundColor:'white',
+        margin:10,
+        padding:15,
+        justifyContent:'center',
+        alignItems:'center',
+        borderRadius:10
 
+    },
+    containerCount:{
+        width:100,
+        justifyContent:'space-between',
+        alignItems:'center',
+        flexDirection:'row',
+
+    },
+    itemCart:{
+        flexDirection:'row',
+        padding:10,
+        margin:10,
+        elevation:5,
+        backgroundColor:'white'
+    },
+    rightCart:{
+        flex:1,
+        flexDirection:'column',
+        justifyContent:'space-around',
+        paddingHorizontal:10
+    },
+    imgStyleMap:{
+        width:width-20,
+        height:height/3, 
+    },
+    containerMap:{
+        width:width-20,
+        height:height/3,
+        elevation:5,
+        backgroundColor:textGrayColor
+    },
+    conatinerContact:{
+        backgroundColor:'white',
+        flex:1,
+        marginTop:10,
+        elevation:5,
+        justifyContent:'space-between'
+    },
+    rowContact:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        padding:10
+    },
+    line:{
+        height:2,
+        backgroundColor:textGrayColor,
+        marginHorizontal:10
+    }
 
 })
 

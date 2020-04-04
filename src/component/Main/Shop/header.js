@@ -29,7 +29,7 @@ import styles from '../../../styles/styles';
                     <Text style={txtBigWhite} >Wearing a Dress</Text>
                     <Image style={imgIcon} source={logo}  />
                  </View>
-                 
+                 <View style={{height:5}} />
                 <TextInput
                     style={txtInputHeader}
                     placeholder={"What do you want to buy?"}

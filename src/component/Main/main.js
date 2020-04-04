@@ -13,7 +13,7 @@ import { createDrawerNavigator,
 import styles from '../../styles/styles';
 const avatar=require("../../images/appIcon/avata.jpg")
 
-
+import Menu from './menu';
 import Shop from './Shop/shop';
 import Authentication from '../Authentication/authentication';
 import ChangeInfo from '../ChangeInfo/changeInfo';
@@ -53,9 +53,7 @@ function CustomDrawerContent(props) {
             <Text style={txtBigWhite}  >Đức Giang</Text>
           </View>
           <View style={{flex:5}} >
-            <DrawerContentScrollView {...props}>
-                    <DrawerItemList {...props} />
-            </DrawerContentScrollView>
+            <Menu navigation={props.navigation} />
           </View> 
       </View>
 
@@ -84,7 +82,7 @@ export default function App() {
                 <Drawer.Screen name="Shop" component={ShopScreen} />
                 <Drawer.Screen name="OrderHistory" component={orderHistoryScreen} />
                 <Drawer.Screen name="ChangeInfo" component={changeInfoScreen} />
-                <Drawer.Screen name="Sign out" component={authenticationScreen} />
+                <Drawer.Screen name="SignOut" component={authenticationScreen} />
             
             </Drawer.Navigator>
         </NavigationContainer>

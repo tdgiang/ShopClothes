@@ -12,7 +12,7 @@ import styles from '../../styles/styles';
          const {headerChangeInfo}=styles 
          return (
              <View style={{flex:1}}  >
-                {renderHeader('User Infomation')}
+                {renderHeader('User Infomation',this.props.navigation)}
                 <BodyChangInfo />
              </View>
              

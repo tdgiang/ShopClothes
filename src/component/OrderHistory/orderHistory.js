@@ -11,7 +11,7 @@ import {renderHeader} from '../../func/function';
      render() {
          return (
              <View style={{flex:1}}  >
-               {renderHeader('Order History')}
+               {renderHeader('Order History',this.props.navigation)}
                <FlatList
                     data={dataOrder}
                     renderItem={({item})=><ItemOrder order={item} />}

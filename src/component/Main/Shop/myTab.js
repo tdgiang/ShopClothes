@@ -5,10 +5,10 @@ import {
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Cart from './cart/cart';
+import CartNavigator from './cart/cartNavigator/cartNavigator';
 import Contact from './contact/contact';
 import HomeNavigator from './home/homeNavigator/homeNavigator';
-import Search from './search/search';
+import SearchNavigator from './search/searchNatigator/searchNavigator';
 
 const iconHomeSelect=require('../../../images/appIcon/home.png');
 const iconHome=require('../../../images/appIcon/home0.png');
@@ -27,13 +27,13 @@ function HomeScreen() {
 
 function CartScreen() {
     return (
-      <Cart/>
+      <CartNavigator/>
     );
 }
 
 function SearchScreen() {
     return (
-      <Search />
+      <SearchNavigator />
     );
 }
 

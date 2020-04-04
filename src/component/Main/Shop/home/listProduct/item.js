@@ -11,11 +11,11 @@ import styles from '../../../../../styles/styles';
  export default class Item extends Component {
      
      render() {
-         const {itemListProduct,txtNamePro,txtRed,iconColor,boxImgList,rightListProduct} =styles;
+         const {itemListProduct,txtNamePro,txtRed,iconColor,boxImgList,rightCart} =styles;
          const {name,price,material,color,img}=this.props.item;
          return (
              <View style={itemListProduct} >
-                 <View style={{flexDirection:'row'}} >
+                 
                      <View  style={boxImgList} >
                         <Image 
                             style={{width:100,height:120}}
@@ -23,7 +23,7 @@ import styles from '../../../../../styles/styles';
                             
                         />
                     </View>
-                     <View  style={rightListProduct} >
+                     <View  style={rightCart} >
                          <Text style={txtNamePro} >{name}</Text>
                          <Text style={txtRed} >{price} $</Text>
                          <Text>Maternal {material}</Text>
@@ -35,7 +35,7 @@ import styles from '../../../../../styles/styles';
                              </TouchableOpacity>
                          </View>
                      </View>
-                 </View>
+               
                 
 
              </View>

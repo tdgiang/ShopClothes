@@ -11,12 +11,14 @@ import styles from '../styles/styles';
 
 const {txtBigWhite,headerChangeInfo,imgIcon}=styles;
 
-export function renderHeader(title){
+export function renderHeader(title,navigation){
     return(
         <View style={headerChangeInfo} >
             <View />
             <Text style={txtBigWhite}>{title}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity  
+                onPress={()=>navigation.openDrawer() }
+            >
                 <Image source={imgBack} style={imgIcon} />
             </TouchableOpacity>
         </View>
