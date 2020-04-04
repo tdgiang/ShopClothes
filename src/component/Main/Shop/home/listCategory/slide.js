@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { 
     View,Text,ImageBackground,TouchableOpacity
  } from 'react-native';
-import dataListCategory from '../../../../data/dataListCategory';
+import dataListCategory from '../../../../../data/dataListCategory';
 import Swiper from "react-native-web-swiper";
 
-import styles from '../../../../styles/styles';
+import styles from '../../../../../styles/styles';
 
  export default class Slide extends Component {
 
@@ -16,7 +16,7 @@ import styles from '../../../../styles/styles';
             listItem.push(
                 
                     <View key={e.id} style={boxBanner}>
-                    <TouchableOpacity>
+                    <TouchableOpacity  onPress={()=>this.props.nav.push('ListProduct')} >
                         <ImageBackground style={[imgStyleBanner,{justifyContent:'center',alignItems:'center'}]} source={e.img}>
                             <Text style={txtNamePro} >{e.name}</Text>
                         </ImageBackground>  

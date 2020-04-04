@@ -1,5 +1,6 @@
 import { StyleSheet,Dimensions } from 'react-native';
 const bgColor='#00997a';
+const grayColor="#a6a6a6"
 const {width,height}=Dimensions.get('window');
 const styles=StyleSheet.create({
     contianerDrawer:{
@@ -41,10 +42,22 @@ const styles=StyleSheet.create({
         height:height/3-50,
         width:width-60,
     },
+    imgProducDetail:{
+        height:220,
+        width:width/2-40,
+        margin:5
+    },
 
 
 
 //Txt
+    txtRedBig:{
+        color:'#cc0066',
+        fontSize:20
+    },
+    txtRed:{
+        color:'#cc0066'
+    },  
     txtBigWhite:{
         color:'white',
         fontSize:22,
@@ -64,7 +77,7 @@ const styles=StyleSheet.create({
     txtPrice:{
         fontSize:18,
         textTransform:'uppercase',
-        color:'red'
+        color:'#cc0066'
     },
     txtBtn:{
         fontSize:18,
@@ -86,6 +99,11 @@ const styles=StyleSheet.create({
         color:bgColor,
         fontSize:18
     },
+    txtBigBlack:{
+        fontSize:18,
+        color:'black',
+        fontWeight:'bold'
+    },
     
 
     containerHeader:{
@@ -95,9 +113,13 @@ const styles=StyleSheet.create({
         paddingVertical:10
     },
     rowBetween:{
-        flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
+        alignItems:'center'
+        },
+       rowCenter:{
+            flexDirection:'row',
+            justifyContent:'center',
         },
     txtInputHeader:{
         padding:5,
@@ -211,6 +233,37 @@ const styles=StyleSheet.create({
         elevation:3,
         padding:10,
         justifyContent:'center'
+        
+    },
+    containerDetail:{
+        padding:10,
+        margin:10,
+        backgroundColor:'white',
+        flex:1,
+        elevation:2,
+        paddingHorizontal:20
+    },
+    iconColor:{
+        width:25,
+        height:25,
+        borderRadius:25/2,
+        backgroundColor:'khaki',
+        marginHorizontal:10,
+        borderColor:'red',
+        borderWidth:1
+    },
+    itemListProduct:{
+        padding:10,
+        borderBottomColor:'#f2f2f2',
+        borderBottomWidth:1,
+        marginTop:10
+    },
+    boxImgList:{
+        width:110
+    },
+    rightListProduct:{
+        flexDirection:'column',
+        justifyContent:'space-around',
         
     }
 

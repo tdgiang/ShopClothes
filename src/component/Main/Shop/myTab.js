@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Cart from './cart/cart';
 import Contact from './contact/contact';
-import Home from './home/home';
+import HomeNavigator from './home/homeNavigator/homeNavigator';
 import Search from './search/search';
 
 const iconHomeSelect=require('../../../images/appIcon/home.png');
@@ -21,7 +21,7 @@ const iconContactSelect=require('../../../images/appIcon/contact.png');
 
 function HomeScreen() {
     return (
-      <Home />
+      <HomeNavigator />
     );
 }
 

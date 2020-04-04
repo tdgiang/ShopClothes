@@ -5,7 +5,7 @@ import {
     Image,
     TouchableOpacity
  } from 'react-native';
-import styles from '../../../../styles/styles';
+import styles from '../../../../../styles/styles';
 
 export default class ItemTopProduct extends Component {
      
@@ -13,7 +13,7 @@ export default class ItemTopProduct extends Component {
          const  {containerItem,imgStyleItemPro,txtNamePro,txtPrice,footerItem}=styles;
          const {name,price,img}=this.props.product;
          return (
-             <TouchableOpacity>
+             <TouchableOpacity  onPress={()=>this.props.nav.push("Detail")} >
                 <View style={containerItem}  >
                 <Image source={img} style={imgStyleItemPro} />
                 <View style={footerItem} >

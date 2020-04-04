@@ -5,9 +5,9 @@ import {
     Image,
     FlatList
  } from 'react-native';
-import styles from '../../../../styles/styles';
+import styles from '../../../../../styles/styles';
 import ItemTopProduct from './itemTopProduct';
-import dataTopProduct from '../../../../data/dataTopProduct';
+import dataTopProduct from '../../../../../data/dataTopProduct';
 
 export default class TopProduct extends Component {
      
@@ -19,7 +19,7 @@ export default class TopProduct extends Component {
                     <FlatList
                         style={{paddingHorizontal:20,marginTop:10}}
                         data={dataTopProduct}
-                        renderItem={({item})=><ItemTopProduct product={item} />}
+                        renderItem={({item})=><ItemTopProduct product={item} nav={this.props.nav} />}
                         numColumns={2}
                     />
 
