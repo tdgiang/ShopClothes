@@ -9,9 +9,9 @@ function SearchScreen({ navigation }) {
       <Search navSearch={navigation}  />
     );
 }
-function DetailScreen({ navigation }) {
+function DetailScreen({route, navigation }) {
     return (
-    <Detail navSearch={navigation}  />
+    <Detail navSearch={navigation} route={route} />
     );
 }
 

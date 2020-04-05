@@ -10,10 +10,9 @@ import styles from '../../../../../styles/styles';
 
 const back =require('../../../../../images/appIcon/back.png');
 const cart =require('../../../../../images/appIcon/cartSelect.png');
-const imgProduct01=require('../../../../../images/products/54.jpeg');
-const imgProduct02=require('../../../../../images/products/55.jpeg');
+ 
 export default class Detail extends Component {
-
+ 
     comeBack(){
         if(this.props.nav)
             this.props.nav.pop();
@@ -27,6 +26,9 @@ export default class Detail extends Component {
          const {containerDetail,rowBetween,
             imgIcon,imgProducDetail,rowCenter,txtBigBlack,
             txtNamePro,txtRed,iconColor} =styles;
+
+        const {img,name,color,material,description,price}=this.props.route.params.product;
+       
          return (
              <View style={{flex:1,backgroundColor:'#f2f2f2'}}  >
                  <View  style={containerDetail} >    
@@ -39,22 +41,22 @@ export default class Detail extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={rowBetween} >
-                        <Image source={imgProduct01} style={imgProducDetail} />
-                        <Image source={imgProduct02}  style={imgProducDetail} />
+                        <Image  source={img[0]} style={imgProducDetail} />
+                        <Image source={img[1]}  style={imgProducDetail} />
                     </View>
                     <View style={[rowCenter,{marginVertical:10}]} >
-                        <Text  style={txtBigBlack} >BLACK OF THE </Text>
-                        <Text style={txtNamePro}>/124$</Text>
+                        <Text  style={txtBigBlack} >{name} </Text>
+                        <Text style={txtNamePro}>/{price}$</Text>
                     </View>
                     <View style={{flex:1}} >
                         <Text>
-                            Mô tả sản phẩm
+                            {description}
                         </Text>
                     </View>
                     <View style={[rowBetween,{height:40}]} >
-                        <Text style={txtRed} >Material leather</Text>
+                    <Text style={txtRed} >Material {material}</Text>
                         <View  style={rowCenter} >
-                            <Text style={txtRed} >Color khaki</Text>
+                            <Text style={txtRed} >Color {color}</Text>
                             <View style={iconColor}  />
                         </View>
                     </View>

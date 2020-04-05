@@ -9,9 +9,9 @@ function CartScreen({ navigation }) {
       <Cart navCart={navigation}  />
     );
 }
-function DetailScreen({ navigation }) {
+function DetailScreen({route, navigation }) {
     return (
-    <Detail navCart={navigation}  />
+    <Detail navCart={navigation} route={route} />
     );
 }
 

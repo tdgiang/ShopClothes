@@ -10,9 +10,9 @@ function HomeScreen({ navigation }) {
       <Home nav={navigation}  />
     );
 }
-function DetailScreen({ navigation }) {
+function DetailScreen({route, navigation }) {
     return (
-    <Detail nav={navigation}  />
+    <Detail nav={navigation} route={route} />
     );
 }
 function ListProductScreen({ navigation }) {

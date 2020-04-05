@@ -18,7 +18,7 @@ import styles from '../../../../styles/styles';
                     <View  style={boxImgList} >
                        <Image 
                            style={{width:100,height:120}}
-                           source={img}   
+                           source={img[0]}   
                        />
                    </View>
                     <View  style={rightCart} >
@@ -43,7 +43,7 @@ import styles from '../../../../styles/styles';
                                 
                                
                             </View>
-                            <TouchableOpacity onPress={()=>this.props.navCart.push("Detail")} >
+                            <TouchableOpacity onPress={()=>this.props.navCart.push("Detail",{product:this.props.item})} >
                                <Text style={txtRed} >Show Details</Text>
                             </TouchableOpacity>
                         </View>

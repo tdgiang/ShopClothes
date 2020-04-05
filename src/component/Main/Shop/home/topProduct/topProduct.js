@@ -7,7 +7,7 @@ import {
  } from 'react-native';
 import styles from '../../../../../styles/styles';
 import ItemTopProduct from './itemTopProduct';
-import dataTopProduct from '../../../../../data/dataTopProduct';
+import dataProduct from '../../../../../data/dataProduct';
 
 export default class TopProduct extends Component {
      
@@ -18,7 +18,7 @@ export default class TopProduct extends Component {
                     <Text style={txtTitle} >Top Product</Text>
                     <FlatList
                         style={{paddingHorizontal:20,marginTop:10}}
-                        data={dataTopProduct}
+                        data={dataProduct}
                         renderItem={({item})=><ItemTopProduct product={item} nav={this.props.nav} />}
                         numColumns={2}
                     />

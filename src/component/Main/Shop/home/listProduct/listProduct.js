@@ -8,7 +8,7 @@ import {
  } from 'react-native';
  import styles from '../../../../../styles/styles';
 import Item from './item';
-import dataTopProcuct from '../../../../../data/dataTopProduct';
+import dataCart from '../../../../../data/dataCart';
  const back=require('../../../../../images/appIcon/backList.png');
  
  export default class ListProduct extends Component {
@@ -25,7 +25,7 @@ import dataTopProcuct from '../../../../../data/dataTopProduct';
                         <View />
                 </View>
                <FlatList
-                    data={dataTopProcuct}
+                    data={dataCart}
                     renderItem={({item})=><Item  item={item} nav={this.props.nav} />}
                     showsVerticalScrollIndicator={false}
 

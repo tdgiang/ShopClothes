@@ -19,7 +19,7 @@ import styles from '../../../../../styles/styles';
                      <View  style={boxImgList} >
                         <Image 
                             style={{width:100,height:120}}
-                            source={img}
+                            source={img[0]}
                             
                         />
                     </View>
@@ -30,7 +30,7 @@ import styles from '../../../../../styles/styles';
                          <View  style={{flexDirection:'row',alignItems:'center'}} >
                              <Text  >Color {color}</Text>
                              <View style={iconColor} />
-                             <TouchableOpacity onPress={()=>this.props.nav.push("Detail")} >
+                             <TouchableOpacity onPress={()=>this.props.nav.push("Detail",{product:this.props.item})} >
                                 <Text style={txtRed} >Show Details</Text>
                              </TouchableOpacity>
                          </View>
