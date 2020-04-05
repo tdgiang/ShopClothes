@@ -12,7 +12,15 @@ const back =require('../../../../../images/appIcon/back.png');
 const cart =require('../../../../../images/appIcon/cartSelect.png');
  
 export default class Detail extends Component {
- 
+
+
+   
+    selectParams(){
+        if(this.props.route.params.productCart)
+            return this.props.route.params.productCart.product;
+        return this.props.route.params.product;
+    }
+
     comeBack(){
         if(this.props.nav)
             this.props.nav.pop();
@@ -26,9 +34,8 @@ export default class Detail extends Component {
          const {containerDetail,rowBetween,
             imgIcon,imgProducDetail,rowCenter,txtBigBlack,
             txtNamePro,txtRed,iconColor} =styles;
-
-        const {img,name,color,material,description,price}=this.props.route.params.product;
-       
+            const {img,name,color,material,description,price}=this.selectParams();
+            
          return (
              <View style={{flex:1,backgroundColor:'#f2f2f2'}}  >
                  <View  style={containerDetail} >    
