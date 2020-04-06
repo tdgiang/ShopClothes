@@ -30,13 +30,6 @@ import styles from '../../styles/styles';
                  >
                      <Text style={txtMenu} >Change Info</Text>
                  </TouchableOpacity>
-                 <TouchableOpacity 
-                    style={btnMenu} 
-                    onPress={()=>this.props.navigation.navigate("SignOut") }
-                 >
-                     <Text style={txtMenu} >Sign Out</Text>
-                 </TouchableOpacity>
-
              </View>
              
          );

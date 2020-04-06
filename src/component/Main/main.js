@@ -7,25 +7,16 @@ import { View ,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator,
-    DrawerContentScrollView,
-    DrawerItemList,
+
 } from '@react-navigation/drawer';
 import styles from '../../styles/styles';
 const avatar=require("../../images/appIcon/avata.jpg")
 
 import Menu from './menu';
 import Shop from './Shop/shop';
-import Authentication from '../Authentication/authentication';
 import ChangeInfo from '../ChangeInfo/changeInfo';
 import OrderHistory from '../OrderHistory/orderHistory';
 
-function authenticationScreen({ navigation }) {
-    return (
-        <Authentication navigation={navigation} />
-     
-    );
-}
-  
 function changeInfoScreen({ navigation }) {
     return (
       <ChangeInfo navigation={navigation}  />
@@ -62,7 +53,7 @@ function CustomDrawerContent(props) {
 
 const Drawer = createDrawerNavigator();
   
-export default function App() {
+export default function Main() {
     return (
         <NavigationContainer>
             <Drawer.Navigator
@@ -82,8 +73,6 @@ export default function App() {
                 <Drawer.Screen name="Shop" component={ShopScreen} />
                 <Drawer.Screen name="OrderHistory" component={orderHistoryScreen} />
                 <Drawer.Screen name="ChangeInfo" component={changeInfoScreen} />
-                <Drawer.Screen name="SignOut" component={authenticationScreen} />
-            
             </Drawer.Navigator>
         </NavigationContainer>
      

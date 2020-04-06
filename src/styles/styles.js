@@ -162,7 +162,7 @@ const styles=StyleSheet.create({
     },
     containerTopProfuct:{
         backgroundColor:'#ffffff',
-        marginHorizontal:5,
+        marginHorizontal:10,
         marginTop:10,
         elevation:5,
 

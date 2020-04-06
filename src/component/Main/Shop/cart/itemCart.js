@@ -7,8 +7,22 @@ import {
  } from 'react-native';
 import styles from '../../../../styles/styles';
 import {connect} from 'react-redux';
+import setAsynstorage from '../../../../api/asynstorage/setAsynstorage';
  import {removeProduct,decreaseProduct,augmentProduct} from '../../../../api/redux/actionCreator';
 class ItemCart extends Component {
+
+    _removeProduct=async(id)=>{      
+        await this.props.removeProduct(id);
+        
+    }
+
+    UNSAFE_componentWillUpdate(){
+        console.log("Hello");
+        
+        console.log("Did mout:"+this.props.arrCart);
+        
+    }
+
      
      render() {
         const {itemCart,containerCount,txtNamePro,txtRed,boxImgList,rightCart,rowBetween,txtCout} =styles;
@@ -25,7 +39,7 @@ class ItemCart extends Component {
                     <View  style={rightCart} >
                         <View  style={rowBetween} >
                             <Text style={txtNamePro} >{name}</Text>
-                            <TouchableOpacity onPress={()=>this.props.removeProduct(id)}  >
+                            <TouchableOpacity onPress={this._removeProduct.bind(this,id)}  >
                                 <Text style={{fontSize:16,color:'gray'}} >X</Text>
                             </TouchableOpacity>
                         </View>
@@ -51,5 +65,11 @@ class ItemCart extends Component {
      }
  }
 
- export default connect(null,{removeProduct,decreaseProduct,augmentProduct})(ItemCart);
+ const mapStateToProps = (state) => {
+     return {
+         arrCart: state
+     }
+ }
+
+ export default connect(mapStateToProps,{removeProduct,decreaseProduct,augmentProduct})(ItemCart);
 

@@ -25,3 +25,11 @@ export function addProduct(pro){
         pro
     }
 }
+
+
+export function setData(data){
+    return{
+        type:'SET_DATA',
+        data
+    }
+}

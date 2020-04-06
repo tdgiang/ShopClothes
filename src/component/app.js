@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Provider} from 'react-redux';
 import Main from './Main/main';
 import store from '../api/redux/store';
-export default class app extends Component {
+export default class App extends Component {
   
   render() {
     return (

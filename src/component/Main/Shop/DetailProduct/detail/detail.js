@@ -7,11 +7,13 @@ import {
  } from 'react-native';
 import styles from '../../../../../styles/styles';
 
-
+import  setAsynstorage from '../../../../../api/asynstorage/setAsynstorage';
+import {connect} from 'react-redux';
+import {addProduct} from '../../../../../api/redux/actionCreator';
 const back =require('../../../../../images/appIcon/back.png');
 const cart =require('../../../../../images/appIcon/cartSelect.png');
  
-export default class Detail extends Component {
+class Detail extends Component {
 
 
    
@@ -19,6 +21,10 @@ export default class Detail extends Component {
         if(this.props.route.params.productCart)
             return this.props.route.params.productCart.product;
         return this.props.route.params.product;
+    }
+    addCart=async(product)=>{
+         await this.props.addProduct(product);
+         setAsynstorage(this.props.arrCart);
     }
 
     comeBack(){
@@ -34,7 +40,8 @@ export default class Detail extends Component {
          const {containerDetail,rowBetween,
             imgIcon,imgProducDetail,rowCenter,txtBigBlack,
             txtNamePro,txtRed,iconColor} =styles;
-            const {img,name,color,material,description,price}=this.selectParams();
+            const product=this.selectParams();
+            const {img,name,color,material,description,price}=product;
             
          return (
              <View style={{flex:1,backgroundColor:'#f2f2f2'}}  >
@@ -43,7 +50,7 @@ export default class Detail extends Component {
                         <TouchableOpacity  onPress={this.comeBack.bind(this)} >
                             <Image  source={back} style={imgIcon}  />
                         </TouchableOpacity>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={this.addCart.bind(this,product)}  >
                             <Image source={cart} style={imgIcon}  />
                         </TouchableOpacity>
                     </View>
@@ -73,3 +80,11 @@ export default class Detail extends Component {
          );
      }
  }
+
+ const mapStateToProps = (state) => {
+     return {
+         arrCart: state
+     }
+ }
+
+ export default connect(mapStateToProps,{addProduct})(Detail);
