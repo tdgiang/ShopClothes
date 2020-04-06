@@ -30,6 +30,12 @@ import styles from '../../styles/styles';
                  >
                      <Text style={txtMenu} >Change Info</Text>
                  </TouchableOpacity>
+                 <TouchableOpacity  
+                    style={btnMenu}
+                    onPress={()=>alert('logOut') }
+                 >
+                     <Text style={txtMenu} >Log Out</Text>
+                 </TouchableOpacity>
              </View>
              
          );
