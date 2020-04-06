@@ -14,8 +14,8 @@ import styles from '../../styles/styles';
       
      render() {
          const {footerAuthen,btnLeft ,btnRight}=styles;
-         const colorSignIn=this.props.signIn?'#00cc88':'#a6a6a6';
-         const colorSignUp=this.props.signIn?'#a6a6a6':'#00cc88';
+         const colorSignIn=this.props.signIn?'#00997a':'#a6a6a6';
+         const colorSignUp=this.props.signIn?'#a6a6a6':'#00997a';
          return (
              <View  style={footerAuthen } >
                  <TouchableOpacity style={btnLeft} onPress={()=>this.props.selectSignIn()} >

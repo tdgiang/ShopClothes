@@ -12,13 +12,13 @@ import SignUp from './signUp';
     constructor(props){
         super(props);
         this.state={
-            signIn:false
+            signIn:true
         }
     }
 
-    renderSign(){
+    renderSign(navAuthen){
         if(this.state.signIn)
-            return <SignIn />
+            return <SignIn navAuthen={navAuthen} />
         return <SignUp />
     }
 
@@ -35,11 +35,11 @@ import SignUp from './signUp';
      
      render() {
          return (
-             <View style={{flex:1,backgroundColor:'#00cc88'}}  >
+             <View style={{flex:1,backgroundColor:'#00997a'}}  >
                  <View style={{height:50}} >
                     <Header />
                  </View>
-                 {this.renderSign()}
+                 {this.renderSign(this.props.navAuthen)}
                 <Footer signIn={this.state.signIn} 
                     selectSignUp={this.selectSignUp.bind(this)} 
                     selectSignIn={this.selectSignIn.bind(this)}  
