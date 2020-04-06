@@ -3,33 +3,64 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Image
+    Image,
+    Alert,
+    Animated
  } from 'react-native';
+
 import styles from '../../../../styles/styles';
 import {connect} from 'react-redux';
 import setAsynstorage from '../../../../api/asynstorage/setAsynstorage';
- import {removeProduct,decreaseProduct,augmentProduct} from '../../../../api/redux/actionCreator';
+import {removeProduct,decreaseProduct,augmentProduct} from '../../../../api/redux/actionCreator';
+
 class ItemCart extends Component {
 
-    _removeProduct=async(id)=>{      
-        await this.props.removeProduct(id);
-        
+    constructor(props){
+        super(props);
+        this.state={
+            animOpacity:new Animated.Value(1)
+        }
     }
 
-    UNSAFE_componentWillUpdate(){
-        console.log("Hello");
-        
-        console.log("Did mout:"+this.props.arrCart);
-        
+    _removeProduct(id){
+        Alert.alert(
+            "Thông báo",
+            "Bạn muốn xóa sản phẩm khỏi giỏ hàng?",
+            [
+              
+              { 
+                  text: "OK",
+                  onPress: () =>{
+                    Animated.timing(
+                        this.state.animOpacity,
+                        {
+                            toValue:0,
+                            duration:500,
+                            useNativeDriver:true
+                        }
+                    ).start(()=>this.props.removeProduct(id))
+
+                  }
+                  },
+              {
+                  text: "Cancel",
+                  style: "cancel"
+                },
+            ],
+            { cancelable: true }
+          );  
     }
 
-     
+
+
      render() {
         const {itemCart,containerCount,txtNamePro,txtRed,boxImgList,rightCart,rowBetween,txtCout} =styles;
         const {name,price, img}=this.props.item.product;
         const {count,id}=this.props.item;
+        const opacity=this.state.animOpacity;
+        
         return (
-            <View style={itemCart} >
+            <Animated.View style={[itemCart,{opacity,transform:[{scale:opacity}]}]} >
                     <View  style={boxImgList} >
                        <Image 
                            style={{width:100,height:120}}
@@ -60,7 +91,7 @@ class ItemCart extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-            </View>
+            </Animated.View>
         );
      }
  }

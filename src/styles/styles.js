@@ -1,4 +1,5 @@
 import { StyleSheet,Dimensions } from 'react-native';
+
 const bgColor='#00997a';
 const textGrayColor="#a6a6a6";
 const bgGray='#f2f2f2';
@@ -310,7 +311,8 @@ const styles=StyleSheet.create({
         padding:10,
         margin:10,
         elevation:5,
-        backgroundColor:'white'
+        backgroundColor:'white',
+        height:140
     },
     rightCart:{
         flex:1,

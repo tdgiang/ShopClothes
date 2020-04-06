@@ -3,7 +3,8 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
  } from 'react-native';
 
 const imgBack=require('../images/appIcon/backs.png')

@@ -31,7 +31,7 @@ import styles from '../../styles/styles';
                     placeholder={"Enter your email"} 
                     onChangeText={(val)=>this.setState({passWord:val})}  
                 />
-                <TouchableOpacity style={btnSign} onPress={()=>this.props.navAuthen.push("App")} >
+                <TouchableOpacity style={btnSign} onPress={()=>this.props.navAuthen.navigate("App")} >
                     <Text style={txtBtn} >Sign in now</Text>
                 </TouchableOpacity>
              </View>
