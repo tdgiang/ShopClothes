@@ -5,7 +5,7 @@ import {
     Image
  } from 'react-native';
 import styles from '../../../../styles/styles';
-
+import MapView from 'react-native-maps';
  const imgMap=require('../../../../images/appIcon/map.png');
  const iconLocation=require('../../../../images/appIcon/location.png');
  const iconPhone=require('../../../../images/appIcon/phone.png');
@@ -17,12 +17,17 @@ import styles from '../../../../styles/styles';
          const {imgStyleMap,containerMap,conatinerContact,line,imgIcon,rowContact,txtRed}=styles
          return (
              <View style={{flex:1,backgroundColor:'#e6e6e6',padding:10}}  >
-                <View style={containerMap}>
-                    <Image
-                        style={imgStyleMap}
-                        source={imgMap}
-                    />
-                 </View>
+                 
+                <MapView
+                style={containerMap}
+                initialRegion={{
+                latitude: 37.78825,
+                longitude: -122.4324,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+                }}
+                 />
+                
 
                 <View  style={conatinerContact} >
                     <View  style={rowContact}  >
