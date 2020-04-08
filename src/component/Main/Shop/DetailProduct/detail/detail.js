@@ -3,11 +3,11 @@ import {
     View,
     Text,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
  } from 'react-native';
 import styles from '../../../../../styles/styles';
-
-import  setAsynstorage from '../../../../../api/asynstorage/setAsynstorage';
+ 
 import {connect} from 'react-redux';
 import {addProduct} from '../../../../../api/redux/actionCreator';
 const back =require('../../../../../images/appIcon/back.png');
@@ -22,10 +22,7 @@ class Detail extends Component {
             return this.props.route.params.productCart.product;
         return this.props.route.params.product;
     }
-    addCart=async(product)=>{
-         await this.props.addProduct(product);
-         setAsynstorage(this.props.arrCart);
-    }
+ 
 
     comeBack(){
         if(this.props.nav)
@@ -41,7 +38,7 @@ class Detail extends Component {
             imgIcon,imgProducDetail,rowCenter,txtBigBlack,
             txtNamePro,txtRed,iconColor} =styles;
             const product=this.selectParams();
-            const {img,name,color,material,description,price}=product;
+            const {id,img,name,color,material,description,price}=product;
             
          return (
              <View style={{flex:1,backgroundColor:'#f2f2f2'}}  >
@@ -50,7 +47,25 @@ class Detail extends Component {
                         <TouchableOpacity  onPress={this.comeBack.bind(this)} >
                             <Image  source={back} style={imgIcon}  />
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={this.addCart.bind(this,product)}  >
+                        <TouchableOpacity onPress={async()=>{
+                            let temp=false;
+                            await this.props.arrCart.map(e=>{
+                                if(e.product.id==id){
+                                    temp=true;
+                                }
+                            });
+                            if(temp==true)
+                            { 
+                                Alert.alert("Thông báo","Sản phẩm bạn chọn đã tồn tại trong giỏ hàng!")
+                            }
+                            else
+                                this.props.addProduct(product)
+                                
+                            
+
+
+                            
+                        }}  >
                             <Image source={cart} style={imgIcon}  />
                         </TouchableOpacity>
                     </View>

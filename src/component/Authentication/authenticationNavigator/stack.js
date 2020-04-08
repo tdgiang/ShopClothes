@@ -3,7 +3,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import  App from '../../app';
 import Authentication from  '../authentication';
 
-
 function AppScreen({ navigation }) {
     return (
       <App navAuthen={navigation}  />

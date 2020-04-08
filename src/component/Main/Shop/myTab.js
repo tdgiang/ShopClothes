@@ -19,9 +19,9 @@ const iconSearchSelect=require('../../../images/appIcon/search.png');
 const iconContact=require('../../../images/appIcon/contact0.png');
 const iconContactSelect=require('../../../images/appIcon/contact.png');
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
     return (
-      <HomeNavigator />
+      <HomeNavigator navTab={navigation} />
     );
 }
 
@@ -60,7 +60,7 @@ function renderBabBarIcon(focused,route){
               break; 
     }
 
-    return <Image source={iconName}  style={{width:30,height:30}} />;
+    return <Image source={iconName}   style={{width:30,height:30}} />;
   }
   
 const Tab = createBottomTabNavigator();

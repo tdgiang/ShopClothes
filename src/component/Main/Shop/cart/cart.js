@@ -8,7 +8,7 @@ import {
  import {connect} from 'react-redux';
 import styles from '../../../../styles/styles';
 import ItemCart from './itemCart';
- 
+import getAsynstorage from '../../../../api/asynstorage/getAsynstorage';
 class Cart extends Component {
 
     getTotal(){

@@ -10,7 +10,8 @@ import {
 
 import styles from '../../../../styles/styles';
 import {connect} from 'react-redux';
-import setAsynstorage from '../../../../api/asynstorage/setAsynstorage';
+
+
 import {removeProduct,decreaseProduct,augmentProduct} from '../../../../api/redux/actionCreator';
 
 class ItemCart extends Component {
@@ -22,12 +23,11 @@ class ItemCart extends Component {
         }
     }
 
-    _removeProduct(id){
-        Alert.alert(
+    _removeProduct=async(id)=>{
+         Alert.alert(
             "Thông báo",
             "Bạn muốn xóa sản phẩm khỏi giỏ hàng?",
             [
-              
               { 
                   text: "OK",
                   onPress: () =>{
@@ -38,7 +38,9 @@ class ItemCart extends Component {
                             duration:500,
                             useNativeDriver:true
                         }
-                    ).start(()=>this.props.removeProduct(id))
+                    ).start(async()=>{      
+                     this.props.removeProduct(id); 
+                    })
 
                   }
                   },
@@ -48,7 +50,8 @@ class ItemCart extends Component {
                 },
             ],
             { cancelable: true }
-          );  
+          );
+ 
     }
 
 
@@ -82,7 +85,18 @@ class ItemCart extends Component {
                                     <Text  style={txtCout} >+</Text>
                                 </TouchableOpacity>
                                 <Text style={txtCout} >{count}</Text>
-                                <TouchableOpacity onPress={()=>this.props.decreaseProduct(id)} >
+                                <TouchableOpacity onPress={()=>{
+                                    if(count==1)
+                                    {
+                                        console.log("Ban muon xoa sp");
+                                        this._removeProduct(id);
+                                    }
+                                    else
+                                    {
+                                        this.props.decreaseProduct(id);
+
+                                    }
+                                } } >
                                     <Text  style={txtCout}>-</Text>
                                 </TouchableOpacity>  
                             </View>
